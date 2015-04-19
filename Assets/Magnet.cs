@@ -48,6 +48,16 @@ public class Magnet : MonoBehaviour {
 
 	void TogglePower()
 	{
+		AudioClip clip;
+		if(!powered)
+		{
+			clip = Resources.Load("power_on") as AudioClip;
+		}
+		else
+		{
+			clip = Resources.Load("power_off") as AudioClip;
+		}
+		GameController.Instance().GetComponentInChildren<AudioSource>().PlayOneShot(clip, 1.0f);
 		powered = !powered;
 	}
 }

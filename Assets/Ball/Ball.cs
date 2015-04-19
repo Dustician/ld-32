@@ -26,9 +26,7 @@ public class Ball : MonoBehaviour {
 		}
 		if(other.gameObject.CompareTag("Target"))
 		{
-			Time.timeScale = 0;
-			Application.LoadLevel(Application.loadedLevel + 1);
-			Debug.Log("Win");
+			GameController.Instance().Win();
 		}
 	}
 }
