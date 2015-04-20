@@ -3,7 +3,7 @@ using System.Collections;
 
 public class GameController : MonoBehaviour {
 
-	private bool started = false;
+	[HideInInspector] public bool started = false;
 
 	private static GameController instance;
 
@@ -26,6 +26,7 @@ public class GameController : MonoBehaviour {
 		if(Input.GetKeyDown("space") && !started)
 		{
 			Time.timeScale = 1;
+			started = true;
 		}
 	}
 

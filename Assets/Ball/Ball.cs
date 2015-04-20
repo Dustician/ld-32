@@ -21,7 +21,6 @@ public class Ball : MonoBehaviour {
 	{
 		if(other.gameObject.CompareTag("Barrier"))
 		{
-			Debug.Log("Lose");
 			Application.LoadLevel(Application.loadedLevel);
 		}
 		if(other.gameObject.CompareTag("Target"))

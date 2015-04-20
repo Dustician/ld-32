@@ -15,7 +15,7 @@ public class Magnet : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetKeyDown(powerKey))
+		if (Input.GetKeyDown(powerKey) && GameController.Instance().started)
 		{
 			TogglePower();
 		}
@@ -57,7 +57,7 @@ public class Magnet : MonoBehaviour {
 		{
 			clip = Resources.Load("power_off") as AudioClip;
 		}
-		GameController.Instance().GetComponentInChildren<AudioSource>().PlayOneShot(clip, 1.0f);
+		GameController.Instance().GetComponentInChildren<AudioSource>().PlayOneShot(clip, .2f);
 		powered = !powered;
 	}
 }
